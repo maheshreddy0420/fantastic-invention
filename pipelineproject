@@ -1,10 +1,14 @@
 pipeline {
     agent any
-
+    parameters {
+        string(name: 'NAME', description: 'Please tell me your name?')
+        
+    }
     stages {
-        stage('Hello') {
+        stage('Printing Parameters') {
             steps {
-                echo 'Hello World'
+                echo "Hello ${params.NAME}"
+ 
             }
         }
     }
